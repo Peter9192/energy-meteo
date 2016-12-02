@@ -1732,7 +1732,7 @@ $baseurl: '{{ site.baseurl }}/images';
 /* Footer */
 
 	#footer {
-		@include padding(6em, 0);
+		@include padding(2em, 0);
 		background-color: darken(_palette(bg), 8);
 		text-align: center;
 
