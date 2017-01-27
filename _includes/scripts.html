@@ -10,9 +10,10 @@
 <!-- For the subscription form, set submitted status to false -->
 <script type="text/javascript">var submitted=false;</script>
 
-<!-- Hide thank you message at site load -->
+<!-- Hide thank you message and reset form at site load -->
 <script type="text/javascript">
 $(document).ready(function(){
+  $('#gform')[0].reset();
   $('#thanks').hide();
     });
 </script>
@@ -22,7 +23,6 @@ $(document).ready(function(){
 $('#gform').on('submit', function(e) {
   $('#subscribe').fadeOut(1000);
   $('#gform').fadeOut(1000);
-  $('#gform').reset();
   $('#thanks').fadeIn(1000);
   });
 </script>
