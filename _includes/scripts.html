@@ -6,3 +6,12 @@
 <script src="{{ "/js/util.js" | prepend: site.baseurl }}"></script>
 <!--[if lte IE 8]><script src="{{ "/js/ie/respond.min.js" | prepend: site.baseurl }}"></script><![endif]-->
 <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+
+<!-- For the subscription form -->
+<script type="text/javascript">var submitted=false;</script>
+<script type="text/javascript">
+$('#gform').on('submit', function(e) {
+  $('#gform *').fadeOut(2000);
+  $('#gform').prepend('Thank you for your subscription. ');
+  });
+</script>
