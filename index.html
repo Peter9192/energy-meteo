@@ -71,9 +71,24 @@ layout: landing
 						<div class="inner">
 							<header class="major">
 								<h2>Subscribe</h2>
-								<p>Subsciption will be opened at a later time.</p>
+								<!-- <p>Subsciption will be opened at a later time.</p> -->
+								<form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSeMl53cDO_JjXC2GVXmVh4cQRysDVb4zDapcgbZul9N1a-jhg/formResponse" target="hidden_iframe" onsubmit="submitted=true;">
+	 								First name:<input type="text" name="entry.1202864321"><br>
+	 								Last name: <input type="text" name="entry.101278838"><br>
+									Email: <input type="text" name="entry.1067027620"><br>
+									Other: <input type="text" name="entry.1903651840"><br>
+									<input type="submit" value="Submit">
+								</form>
+								<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+								<script src="assets/js/jquery.min.js"></script>
+								<script type="text/javascript">var submitted=false;</script>
+								<script type="text/javascript">
+								$('#gform').on('submit', function(e) {
+								  $('#gform *').fadeOut(2000);
+								  $('#gform').prepend('Your submission has been processed...');
+								  });
+								</script>
 							</header>
-							<p>Form<p>
 						</div>
 					</section>
 
