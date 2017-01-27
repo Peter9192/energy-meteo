@@ -7,11 +7,21 @@
 <!--[if lte IE 8]><script src="{{ "/js/ie/respond.min.js" | prepend: site.baseurl }}"></script><![endif]-->
 <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
 
-<!-- For the subscription form -->
+<!-- For the subscription form, set submitted status to false -->
 <script type="text/javascript">var submitted=false;</script>
+
+<!-- Hide thank you message at site load -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#thanks').hide();
+    });
+</script>
+
+<!-- show thank you message, remove form at form submit -->
 <script type="text/javascript">
 $('#gform').on('submit', function(e) {
-  $('#gform').fadeOut(2000);
-  $('#gform').prepend('Thank you for your subscription. ');
+  $('#subscribe').fadeOut(1000);
+  $('#gform').fadeOut(1000);
+  $('#thanks').fadeIn(1000);
   });
 </script>
