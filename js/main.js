@@ -1,100 +1,128 @@
-/*
-	Spectral by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+jQuery(document).ready(function($){
+	var articlesWrapper = $('.articles');
 
-(function($) {
+	if( articlesWrapper.length > 0 ) {
+		// cache jQuery objects
+		var windowHeight = $(window).height(),
+			articles = articlesWrapper.find('article'),
+			aside = $('.read-more'),
+			articleSidebarLinks = aside.find('li');
+		// initialize variables
+		var	scrolling = false,
+			sidebarAnimation = false,
+			resizing = false,
+			mq = checkMQ(),
+			svgCircleLength = parseInt(Math.PI*(articleSidebarLinks.eq(0).find('circle').attr('r')*2));
+		
+		// check media query and bind corresponding events
+		if( mq == 'desktop' ) {
+			$(window).on('scroll', checkRead);
+			$(window).on('scroll', checkSidebar);
+		}
 
-	skel
-		.breakpoints({
-			xlarge:	'(max-width: 1680px)',
-			large:	'(max-width: 1280px)',
-			medium:	'(max-width: 980px)',
-			small:	'(max-width: 736px)',
-			xsmall:	'(max-width: 480px)'
-		});
+		$(window).on('resize', resetScroll);
 
-	$(function() {
+		updateArticle();
+		updateSidebarPosition();
 
-		var	$window = $(window),
-			$body = $('body'),
-			$wrapper = $('#page-wrapper'),
-			$banner = $('#banner'),
-			$header = $('#header');
+		aside.on('click', 'a', function(event){
+			event.preventDefault();
+			var selectedArticle = articles.eq($(this).parent('li').index()),
+				selectedArticleTop = selectedArticle.offset().top;
 
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
+			$(window).off('scroll', checkRead);
 
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 100);
-			});
+			$('body,html').animate(
+				{'scrollTop': selectedArticleTop + 2}, 
+				300, function(){
+					checkRead();
+					$(window).on('scroll', checkRead);
+				}
+			); 
+	    });
+	}
 
-		// Mobile?
-			if (skel.vars.mobile)
-				$body.addClass('is-mobile');
-			else
-				skel
-					.on('-medium !medium', function() {
-						$body.removeClass('is-mobile');
-					})
-					.on('+medium', function() {
-						$body.addClass('is-mobile');
-					});
+	function checkRead() {
+		if( !scrolling ) {
+			scrolling = true;
+			(!window.requestAnimationFrame) ? setTimeout(updateArticle, 300) : window.requestAnimationFrame(updateArticle);
+		}
+	}
 
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+	function checkSidebar() {
+		if( !sidebarAnimation ) {
+			sidebarAnimation = true;
+			(!window.requestAnimationFrame) ? setTimeout(updateSidebarPosition, 300) : window.requestAnimationFrame(updateSidebarPosition);
+		}
+	}
 
-		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
-			});
+	function resetScroll() {
+		if( !resizing ) {
+			resizing = true;
+			(!window.requestAnimationFrame) ? setTimeout(updateParams, 300) : window.requestAnimationFrame(updateParams);
+		}
+	}
 
-		// Scrolly.
-			$('.scrolly')
-				.scrolly({
-					speed: 1500,
-					offset: $header.outerHeight()
-				});
+	function updateParams() {
+		windowHeight = $(window).height();
+		mq = checkMQ();
+		$(window).off('scroll', checkRead);
+		$(window).off('scroll', checkSidebar);
+		
+		if( mq == 'desktop') {
+			$(window).on('scroll', checkRead);
+			$(window).on('scroll', checkSidebar);
+		}
+		resizing = false;
+	}
 
-		// Menu.
-			$('#menu')
-				.append('<a href="#menu" class="close"></a>')
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'right',
-					target: $body,
-					visibleClass: 'is-menu-visible'
-				});
+	function updateArticle() {
+		var scrollTop = $(window).scrollTop();
 
-		// Header.
-			if (skel.vars.IEVersion < 9)
-				$header.removeClass('alt');
+		articles.each(function(){
+			var article = $(this),
+				articleTop = article.offset().top,
+				articleHeight = article.outerHeight(),
+				articleSidebarLink = articleSidebarLinks.eq(article.index()).children('a');
 
-			if ($banner.length > 0
-			&&	$header.hasClass('alt')) {
+			if( article.is(':last-of-type') ) articleHeight = articleHeight - windowHeight;
 
-				$window.on('resize', function() { $window.trigger('scroll'); });
-
-				$banner.scrollex({
-					bottom:		$header.outerHeight() + 1,
-					terminate:	function() { $header.removeClass('alt'); },
-					enter:		function() { $header.addClass('alt'); },
-					leave:		function() { $header.removeClass('alt'); }
-				});
-
+			if( articleTop > scrollTop) {
+				articleSidebarLink.removeClass('read reading');
+			} else if( scrollTop >= articleTop && articleTop + articleHeight > scrollTop) {
+				var dashoffsetValue = svgCircleLength*( 1 - (scrollTop - articleTop)/articleHeight);
+				articleSidebarLink.addClass('reading').removeClass('read').find('circle').attr({ 'stroke-dashoffset': dashoffsetValue });
+				changeUrl(articleSidebarLink.attr('href'));
+			} else {
+				articleSidebarLink.removeClass('reading').addClass('read');
 			}
+		});
+		scrolling = false;
+	}
 
-	});
+	function updateSidebarPosition() {
+		var articlesWrapperTop = articlesWrapper.offset().top,
+			articlesWrapperHeight = articlesWrapper.outerHeight(),
+			scrollTop = $(window).scrollTop();
 
-})(jQuery);
+		if( scrollTop < articlesWrapperTop) {
+			aside.removeClass('fixed').attr('style', '');
+		} else if( scrollTop >= articlesWrapperTop && scrollTop < articlesWrapperTop + articlesWrapperHeight - windowHeight) {
+			aside.addClass('fixed').attr('style', '');
+		} else {
+			var articlePaddingTop = Number(articles.eq(1).css('padding-top').replace('px', ''));
+			if( aside.hasClass('fixed') ) aside.removeClass('fixed').css('top', articlesWrapperHeight + articlePaddingTop - windowHeight + 'px');
+		}
+		sidebarAnimation =  false;
+	}
+
+	function changeUrl(link) {
+		var pageArray = location.pathname.split('/'),
+        	actualPage = pageArray[pageArray.length - 1] ;
+        if( actualPage != link && history.pushState ) window.history.pushState({path: link},'',link);
+	}
+
+	function checkMQ() {
+		return window.getComputedStyle(articlesWrapper.get(0), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
+	}
+});
