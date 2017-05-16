@@ -4,7 +4,7 @@ permalink:           pretty
 # Setup
 title:               From model field to power yield
 tagline:             A responsive blog theme that illustrates reading progress. Suited for continous reading.
-url:                 #http://peter9192.github.io
+url:                 http://peter9192.github.io
 baseurl:             /energy-meteo
 analytics_id:
 
