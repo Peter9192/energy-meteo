@@ -33,7 +33,7 @@
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff");
 }
 
-/** Bold */ 
+/** Bold */
 @font-face {
   font-family: "San Francisco";
   font-weight: 700;
@@ -227,7 +227,7 @@ article img {
   display: block;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Primary Site style
 
@@ -286,7 +286,7 @@ img, svg {
   line-height: 1.5;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 download button
 
@@ -330,7 +330,7 @@ download button
   }
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Articles
 
@@ -388,7 +388,7 @@ Articles
   padding-right: 0;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Aside
 
