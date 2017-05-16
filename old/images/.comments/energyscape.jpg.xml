@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>Power Lines</caption>
+  <note>Power Lines in rural Landscape, upcoming Thunderstorm</note>
+  <place/>
+  <categories>
+    <category value="Power lines"/>
+    <category value="Cables"/>
+    <category value="Electricity"/>
+    <category value="Energy"/>
+    <category value="Electricity"/>
+    <category value="Weather"/>
+    <category value="Clouds"/>
+    <category value="Fields"/>
+    <category value="Forest"/>
+    <category value="non-urban scene"/>
+    <category value="Grass"/>
+    <category value="Power Line"/>
+    <category value="Power Generation"/>
+    <category value="Power"/>
+    <category value="Electricity Pylon"/>
+    <category value="In A Row"/>
+    <category value="Tower"/>
+    <category value="Power Supply"/>
+    <category value="Environment"/>
+    <category value="Nature"/>
+    <category value="Pollution"/>
+    <category value="Sky"/>
+    <category value="Steel Cable"/>
+    <category value="Large Group of Objects"/>
+    <category value="Metal"/>
+    <category value="Ugliness"/>
+    <category value="Man Made Structure"/>
+    <category value="Architecture And Buildings"/>
+    <category value="Industry"/>
+  </categories>
+</comment>
