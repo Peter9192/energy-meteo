@@ -2,7 +2,7 @@
 permalink:           pretty
 
 # Setup
-title:               Progress
+title:               From model field to power yield
 tagline:             A responsive blog theme that illustrates reading progress. Suited for continous reading.
 url:                 http://peter9192.github.io
 baseurl:             /energy-meteo
@@ -10,9 +10,9 @@ analytics_id:
 
 # Owner/author information
 owner:
-  name:           Alex Russell
+  name:           Peter Kalverla
   avatar:         avatar.png
-  bio:            "Designer."
+  bio:            "PhD student"
   email:          alex@collectivelymade.com
   twitter:        alexanderussell
   github:         alexanderussell
