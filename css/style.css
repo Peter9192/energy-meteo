@@ -234,6 +234,12 @@ article.after{
     clear:both;
 }
 
+article.post img {
+    width: 30%;
+    height: auto;
+    float: right;
+    display: block;
+}
 /* --------------------------------
 
 Primary Site style

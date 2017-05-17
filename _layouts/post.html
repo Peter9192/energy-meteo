@@ -2,26 +2,21 @@
 layout: default
 ---
 
-<div class="articles">
+<div class="articles full-width">
   <article class="post">
     <header>
       {% if page.img %}
-      <img src="{{site.baseurl}}/img/{{page.img}}" alt="{{page.img}}">
+      <img src="{{site.baseurl}}/img/{{page.img}}">
       {% endif %}
       <h1> {{ page.title }} </h1>
     </header>
-
-    {{ page.intro }}
     {{ content }}
-
-    <!-- <button onclick="window.history.back()">Back</button> -->
-    <!-- <FORM><INPUT Type="button" VALUE="Back to programme" onClick="history.go(-1);return true;"></FORM> -->
     <div class="pagination nugget-info tc">
       <a href="{{ site.baseurl}}/programme" class="button">Back to programme</a>
     </div>
   </article>
 
-  <aside class="related">
+  <!-- <aside class="related">
     <ul>
       {% for post in site.posts reversed limit: 5 %}
       <li>
@@ -32,22 +27,5 @@ layout: default
       </li>
       {% endfor %}
     </ul>
-  </aside>
+  </aside> -->
 </div>
-<!--
-  <aside class="related">
-      <ul>
-        {% for post in site.related_posts limit: 5 %}
-        {% unless post.draft %}
-        <li>
-          <a href="{{site.baseurl}}{{post.url}}">
-            <h3><em>{{post.title}}</em></h3>
-            <small><b>{{post.author}}</b></small>
-          </a>
-        </li>
-        {% endunless %}
-        {% endfor %}
-      </ul>
-
-    </aside>
-</div> -->
