@@ -219,12 +219,19 @@ figure figcaption {
 
 article img {
   margin-bottom: 10px;
+  margin-left: 30px;
 }
 
 article img {
-  width: 100%;
+  width: 40%;
   height: auto;
+  float: right;
   display: block;
+  /*max-width: 400px;*/
+}
+
+article.after{
+    clear:both;
 }
 
 /* --------------------------------
@@ -386,6 +393,12 @@ Articles
 
 .articles.full-width {
   padding-right: 0;
+}
+
+.articles:after{
+    clear:both;
+    content:'';
+    display:block;
 }
 
 /* --------------------------------
@@ -571,4 +584,10 @@ nav a:hover {
   nav {
     margin:0 auto;
   }
+}
+
+.yourclass:after{
+    clear:both;
+    content:'';
+    display:block;
 }
