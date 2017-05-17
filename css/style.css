@@ -592,8 +592,65 @@ nav a:hover {
   }
 }
 
-.yourclass:after{
-    clear:both;
-    content:'';
-    display:block;
+/****************************************************************
+*Post-its
+****************************************************************/
+
+.wrap{
+  margin-left:20px;
+}
+.box{
+  width:250px;
+  height:200px;
+  float:left;
+  background-color:#EDE89A;
+  margin:25px 15px;
+  border-radius:5px;
+}
+.box h3{
+  font-family: 'Merienda', sans-serif;
+  font-size: 24px;
+  font-weight:normal;
+  text-align:center;
+  padding-top:30px;
+  color:#00a;
+}
+
+.shadow1{
+  position:relative;
+}
+.shadow1{
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+}
+/*****************************************************************dashed border
+****************************************************************/
+.shadow1 h3{
+  width:87%;
+  height:100px;
+  margin-left:6%;
+  border:0px dashed #F7EEEE;
+  border-radius:5px;
+}
+/****************************************************************
+*styling shadows
+****************************************************************/
+.shadow1:before, .shadow1:after{
+  position:absolute;
+  content:"";
+  bottom:12px;left:15px;top:80%;
+  width:45%;
+  background:#9B7468;
+  z-index:-1;
+  -webkit-box-shadow: 0 20px 15px #9B7468;
+  -moz-box-shadow: 0 20px 15px #9B7468;
+  box-shadow: 0 20px 15px #9B7468;
+  -webkit-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  transform: rotate(-6deg);
+}
+.shadow1:after{
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  transform: rotate(6deg);
+  right: 15px;left: auto;
 }
