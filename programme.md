@@ -18,7 +18,9 @@ layout: default
       </a>
     </h1>
     <b>{{post.author}}</b>
-    {{ post.intro }}
+    {% if post.excerpt %}
+      {{ post.excerpt }}
+    {% endif %}
     <div class="pagination nugget-info tc">
       <a href="{{ site.baseurl}}{{ post.url }}" class="button">More info and presentation</a>
     </div>
