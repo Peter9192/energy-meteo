@@ -4,7 +4,13 @@ title: Introduction
 author: Arjan & Peter
 ---
 
-People were welcome from 9:00, where the visitors were awaited with a strong cup of black coffee that would prepare them for a focused session.
+After a strong cup of coffee professor Maarten Krol, director of the BBOS research school, opened the symposium with an anecdote about solar panels. It has been claimed that these panels disturb the surface energy balance and as such contribute to global warming rather than mitigate it. Krol (with the audience) expressed some skepticism towards this claim, but the story served to illustrate the interplay between renewable energy and meteorology.
+
+The official programme started with a general introduction by the organisers. They briefly explained their own research projects. Arjan studies wind and turbulence in cities. His work is part of the "Windy city" project. Peter works on North Sea wind fields. A realistic representation of the turbulent wind field is important not only for power forecasts, but also for load assessment studies. In this context, Peter's study aims to quantify and reduce the uncertainty in the simulated wind fields. Better understanding of the marine atmospheric boundary layer is an essential part of the research. This work is part of the [EUROS project](http://offshorewindenergy.tudelft.nl/EUROS/projects/p1/wp1/) which aims to reduce uncertainties in large offshore wind farm projects.  
+
+Arjan and Peter organized this symposium as part of their PhD projects. The SENSE research school encourages students to put their research in broader context by doing activities that are different from their daily research. Organizing a symposium is an ideal interpretation of this assignment. The topic of energy meteorology aligns well with the young gentlemen's research, and stood out as a hot topic that currently receives (too?) little attention in education and research. The energy sectors creates many jobs and poses new research questions: excellent opportunities for meteorologists. This can already be seen in the growing number of Wageningen graduates that find a job in this sector.
+
+The general introduction ended with some practicalities, and an outlook to the rest of the programme.
 
 <!--more-->
 
