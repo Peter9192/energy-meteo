@@ -5,7 +5,8 @@ author: Robert Vautard
 img: DSC05911_opt.jpg
 ---
 
-On the effects of climate change on renewable energy and renewable energy on climate.
+Dr. Robert Vautard is senior scientist at the laboratory of climate and environmental science in France. He has extensive experience in the field of climate modelling and extreme events. Also he participated in the 5th IPCC report. In this symposium he will place renewable energy in the context of climate change and long-term climate variability.
+
 
 <!--more-->
 
