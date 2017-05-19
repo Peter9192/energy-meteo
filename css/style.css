@@ -258,10 +258,11 @@ body {
   font-size: 1.6rem;
   font-family: "San Francisco", "Helvetica Neue", Arial, sans-serif;
   color: #777;
-  background-color: #ffffff;
-  background-image: url("../img/bg.jpg");
+  background-color: #ffffe6;
+  /*background-image: url("../img/bg.jpg");*/
   background-size: cover;
   background-attachment: fixed;
+  margin: 1.5em, 10px;
 }
 a {
   color: #2a76e8;
@@ -273,6 +274,7 @@ img, svg {
 }
 
 .header {
+  margin-left: 1.5em 15px;
   height: 140px;
   border-bottom: 5px solid #e6e6e6;
   text-align: center;
