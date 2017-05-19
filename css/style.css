@@ -275,8 +275,8 @@ img, svg {
   border-bottom: 1px solid #e6e6e6;
   text-align: center;
   padding-top: 24px;
-  background-image: url("../img/bg2.jpg");
-  background-size: cover;
+  background-image: url("../img/bg.jpg");
+  background-size: 100% 100%;
 }
 .header h1 {
   font-family: Georgia, serif;
