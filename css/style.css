@@ -258,7 +258,7 @@ body {
   font-size: 1.6rem;
   font-family: "San Francisco", "Helvetica Neue", Arial, sans-serif;
   color: #777;
-  background-color: #ffffe6;
+  background-color: #fff; /* #ffffe6 */
   /*background-image: url("../img/bg.jpg");*/
   background-size: cover;
   background-attachment: fixed;
